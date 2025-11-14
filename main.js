@@ -1,35 +1,19 @@
-//TODO add imports if needed
-//import { exMain } from "./exclude/exampleAss2.js"
-//TODO add/change doc as needed
 /**
- * TODO - Write functional code for this application. You can call any other function, but usage of ".toString(numberSystem)" and "Number.parseInt(number, numberSystem)" is forbidden (only permitted when used on individual digits).
- * The main function which calls the application. 
- * TODO - Please, add specific description here for the application purpose.
- * @param {string} inputNumber number that is being converted
- * @param {number} inputNumberSystem numerical system that the inputNumber is being converted from
- * @param {number} outputNumberSystem numerical system that the inputNumber is being converted into
- * @returns {string} containing number converted to output system
+ * Název: prevodsoustav.js
+ * Autor: Tereza Gajárková
+ * Spuštění: node prevodsoustav.js [binární číslo]
  */
-export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
-  //TODO code
-  //let dtoOut = exMain(inputNumber, inputNumberSystem, outputNumberSystem);
-  return dtoOut;
+
+//krok 1: definice proměnných
+let bin = "010100";
+let vysledek = 0;
+let bit = 0;
+
+//krok 2: cyklus procházející jednotlivé bity
+for (i = 0; i < bin.length; i++){
+    bit = bin[i] === "1" ? 1 : 0;
+    vysledek = vysledek * 2 + bit;
 }
 
-/**
- * TODO - Change this to contain all input number systems that your application can convert from.
- * Function which returns which number systems are permitted on input.
- * @returns {Array} array of numbers refering to permitted input systems
- */
-export function permittedInputSystems() {
-	return [10, 2];
-}
-
-/**
- * TODO - Change this to contain all output number systems that your application can convert to.
- * Function which returns which number systems are permitted on output.
- * @returns {Array} array of numbers refering to permitted output systems
- */
-export function permittedOutputSystems() {
-	return [10, 2];
-}
+//krok 3: výpis výsledku
+console.log("Desítkový tvar:", vysledek)
